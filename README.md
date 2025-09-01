@@ -52,38 +52,22 @@ python secret_grid.py "{GOOGLE_DOC_PUB_URL}"
 Example:
 
 ```bash
-python secret_grid.py "https://docs.google.com/document/d/e/2PACX-1vQ1xyz123/pub"
+python secret_grid.py "https://docs.google.com/document/d/e/2PACX-1vRPzbNQcx5UriHSbZ-9vmsTow_R6RRe7eyAU60xIF9Dlz-vaHiHNO2TKgDi7jy4ZpTpNqM7EvEcfr_p/pub"
 ```
-
-### Arguments
-
-- `url` (**required**): The published-to-web Google Doc URL (must end with `/pub`).
-- `--blank`: Character used to fill empty cells (default: space `" "`).
-- `--max-cells`: Safety cap on the total grid size (`width * height`), default = 1,000,000.
 
 ---
 
 ## Example Output
 
-If the Google Doc contains:
-
 ```
-0
-█
-0
-1
-#
-0
-0
-@
-1
-```
-
-The script will render:
-
-```
-█#
-@ 
+[info] parsed 331 triples, 331 unique cells -> grid 88x7
+██░    ███░ ██████░    ███████░     ██░     ██░     ██████████░ ████████░    ████████░  
+██░  ███░     ██░    ███░    ██░   ████░   ████░    ██░         ██░     ██░  ██░     ██░
+██░███░       ██░   ███░           ██░██░ ██░██░    ██░         ██░      ██░ ██░     ██░
+████░         ██░   ██░           ███░ ██░██░ ██░   ████████░   ██░      ██░ ████████░  
+██░███░       ██░   ███░          ██░  █████░ ███░  ██░         ██░      ██░ ██░     ██░
+██░  ███░     ██░    ███░    ██░ ███░   ███░   ██░  ██░         ██░     ██░  ██░     ██░
+██░    ███░ ██████░    ███████░  ██░           ███░ ██████████░ ████████░    ████████░  
 ```
 
 ---
@@ -103,9 +87,3 @@ The script will render:
 - Ensure the Google Doc is published to the web (`File > Share > Publish to web`) and structured correctly with **triplets of cells**.  
 - Overwrites of the same `(x, y)` coordinate are allowed (last one wins).  
 - The script includes safety checks to avoid accidental huge allocations.  
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.  
